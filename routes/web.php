@@ -4,7 +4,7 @@ use App\Http\Controllers\PetsController;
 use App\Models\Pet;
 use App\Models\Ong;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TesteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

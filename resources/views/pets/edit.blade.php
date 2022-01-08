@@ -2,7 +2,31 @@
 
 @section('content')
 
-<form method="post" action="/pets/{{$pet->id}}">
+
+{!! Form::model([
+    $pet, 'method'=>'patch', 'action'=>['App\Http\Controllers\PetsController@update', $pet->id]
+]) !!}
+{!! Form::label('name', 'Nome do Pet') !!}
+{!! Form::text('name',$pet->name) !!}
+{!! Form::label('ong_id', 'Id da ong') !!}
+{!! Form::number('ong_id',$pet->ong_id) !!}
+{!! Form::label('species', 'Especie') !!}
+{!! Form::text('species',$pet->species) !!}
+{!! Form::label('age', 'Idade') !!}
+{!! Form::number('age',$pet->age) !!}
+{!! Form::submit('Update') !!}
+
+{!! Form::close() !!}
+
+{!! Form::open([
+    $pet, 'method'=>'delete', 'action'=>['App\Http\Controllers\PetsController@destroy', $pet->id]
+]) !!}
+
+{!! Form::submit('Deletar') !!}
+
+{!! Form::close() !!}
+
+{{-- <form method="post" action="/pets/{{$pet->id}}">
 
     <input type="hidden" name="_method" value="put">
 
@@ -17,9 +41,9 @@
         <input type="hidden" name="_method" value="delete">    
         <input type="submit" value="Deletar">
         {{-- {{ csrf_field() }} --}}
-    </form></li>
+  {{--  </form></li>
 
-</form>
+// </form> --}}
 
 
 @endsection

@@ -100,5 +100,7 @@ class PetsController extends Controller
         $pet = Pet::findOrFail($id);
 
         $pet->delete();
+
+        return redirect('/pets');
     }
 }
