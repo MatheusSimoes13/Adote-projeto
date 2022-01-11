@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePetRequest;
 use App\Models\Pet;
 use Illuminate\Http\Request;
 
@@ -35,10 +36,29 @@ class PetsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePetRequest $request)
     {
         
-        Pet::create($request->all());
+        $input = $request->all();
+
+        if($file = $request->file('fotopet')){
+
+            $name = $file->getClientOriginalName();
+
+            $file->move('images',$name);
+
+            $input['path'] = $name;
+        }
+
+
+        // $this->validate($request,[
+
+        //     'name'=>'required',
+        //     'ong_id'=>'required'
+
+        // ]);
+
+        Pet::create($input);
 
         return 'foi';
 

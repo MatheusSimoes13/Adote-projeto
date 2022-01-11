@@ -27,7 +27,11 @@ Route::get('/listar', function (){
     return $pets;
 });
 
-Route::resource('/pets', PetsController::class);
+
+Route::group(['middleware'=>'web'],function(){
+    Route::resource('/pets', PetsController::class);
+});
+
 
 // Route::get('/pets', function(){
 

@@ -6,6 +6,8 @@
 
         <li><a href="{{route('pets.show', $pet->id)}}">{{$pet->name}}</a>
             <a href="{{route('pets.edit', $pet->id)}}">Editar</a>
+
+        <img src="{{$pet->path}}" alt="pet">
         
     @endforeach
 

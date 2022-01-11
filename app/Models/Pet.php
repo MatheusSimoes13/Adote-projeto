@@ -7,14 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
 {
+    public $directory = "/images/";
+
     use HasFactory;
 
-    // public function ong(){
-
+    // public function ong($value){
+        
     //     return $this->belongsTo('App\Ong', 'ong_id');
     // }
-    protected $fillable = ['name','ong_id','species','age'];
+    protected $fillable = ['name','ong_id','species','age','path'];
 
     
+
+    public function getPathAttribute($value){
+        
+        return $this->directory . $value;
+    }
 
 }

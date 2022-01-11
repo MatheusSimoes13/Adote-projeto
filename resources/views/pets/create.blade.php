@@ -5,7 +5,7 @@
 
 
     {!! Form::open([
-        'method'=>'post', 'route' => 'pets.store'
+        'method'=>'post', 'route' => 'pets.store', 'files'=>true
     ]) !!}
     {!! Form::label('name', 'Nome do Pet') !!}
     {!! Form::text('name') !!}
@@ -15,9 +15,23 @@
     {!! Form::text('species') !!}
     {!! Form::label('age', 'Idade') !!}
     {!! Form::number('age') !!}
+    {!! Form::file('fotopet') !!}
+
     {!! Form::submit('Enviar') !!}
 
     {!! Form::close() !!}
+
+    @if(count($errors) > 0)
+
+        @foreach ($errors->all() as $error)
+
+            <li>{{$error}}</li>
+
+        @endforeach
+
+
+    @endif
+
 
     {{-- <form method="post" action="/pets">
         <input type="text" name="name" placeholder="nome do pet">
