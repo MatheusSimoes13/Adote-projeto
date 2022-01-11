@@ -3,6 +3,7 @@
 use App\Http\Controllers\PetsController;
 use App\Models\Pet;
 use App\Models\Ong;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/listar', function (){
@@ -32,38 +33,10 @@ Route::group(['middleware'=>'web'],function(){
     Route::resource('/pets', PetsController::class);
 });
 
+Auth::routes();
 
-// Route::get('/pets', function(){
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//     $ong = Ong::find(1);
+Auth::routes();
 
-//     foreach($ong->pets as $pets){
-//         echo $pets->name;
-//     }
-
-// });
-
-
-// Route::get('/insert', function(){
-
-//     $pet = new Pet();
-
-//     $pet->ong_id = '2';
-//     $pet->name = 'Rafa';
-//     $pet->species = 'Cachorro';
-//     $pet->age = '11';
-
-//     $pet->save();
-
-// });
-
-// Route::get('/update', function(){
-
-//     $pet = Pet::find(2);
-
-//     $pet->name = 'Ruf update';
-
-//     $pet->save();
-
-
-// });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
