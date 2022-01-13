@@ -31,14 +31,22 @@ Route::get('/listar', function (){
     return $pets;
 });
 
+Route::get('/buscaOngId', function(){
 
-Route::get('/buscaOng', function(){
-
-    return view('searchOng');
+    return view('searchOngId');
 
 });
-
 Route::get('/ongs/buscarId',[OngsController::class,'buscarOngId'])->name('ongs.buscaId');
+
+Route::get('/buscaOngNome', function(){
+
+    return view('searchOngName');
+
+});
+Route::get('/ongs/buscarNome',[OngsController::class,'buscarOngNome'])->name('ongs.buscaNome');
+
+
+
 
 Route::group(['middleware'=>'web'],function(){
     Route::resource('/pets', PetsController::class);

@@ -16,7 +16,13 @@ class Ong extends Model
     public function pets(){
 
         return $this->hasMany('App\Models\Pet','ong_id','ong_id');
+        
 
+    }
+
+    public function formulario(){
+
+        return $this->hasOne('App\Models\Formulario');
 
     }
 }

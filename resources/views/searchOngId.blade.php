@@ -19,17 +19,4 @@
     {!! Form::close() !!}
 </div>
 
-{{-- App\Http\Controllers\OngsController@buscarOngId --}}
-{{-- 
-<form method = "get"  action = "{{route(['ongs.buscaId',])}}">
-
-    <label for="id">Id da Ong</label>
-    <input type="number" name="id">
-    <input type="submit" value="Procurar">
-
-
-</form> --}}
-
-
-
 @endsection
