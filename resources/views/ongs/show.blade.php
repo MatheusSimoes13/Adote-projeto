@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-
 @section('content')
 
-    <h1>{{$pet->name}}</h1>
-    show do pets
-
+    <li>{{$ong->name}}</li>
+    <li>{{$ong->ong_id}}</li>
 
 @endsection

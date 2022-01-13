@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOngsTable extends Migration
+class CreateFormulariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateOngsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ongs', function (Blueprint $table) {
-            $table->bigIncrements('ong_id');
+        Schema::create('formularios', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->string('name',100);
-            $table->enum('estado',['SP','RJ']);
-            $table->string('cidade',70);
+            $table->smallInteger('ong_id');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateOngsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ongs');
+        Schema::dropIfExists('formularios');
     }
 }

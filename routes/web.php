@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OngsController;
 use App\Http\Controllers\PetsController;
 use App\Models\Pet;
 use App\Models\Ong;
@@ -21,6 +22,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+
+
 Route::get('/listar', function (){
     
     $pets = Pet::all();
@@ -29,8 +32,20 @@ Route::get('/listar', function (){
 });
 
 
+Route::get('/buscaOng', function(){
+
+    return view('searchOng');
+
+});
+
+Route::get('/ongs/buscarId',[OngsController::class,'buscarOngId'])->name('ongs.buscaId');
+
 Route::group(['middleware'=>'web'],function(){
     Route::resource('/pets', PetsController::class);
+});
+
+Route::group(['middleware'=>'web'],function(){
+    Route::resource('/ongs', OngsController::class);
 });
 
 Auth::routes();
