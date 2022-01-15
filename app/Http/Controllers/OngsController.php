@@ -6,6 +6,7 @@ use App\Models\Ong;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OngsController extends Controller
 {
@@ -41,14 +42,34 @@ class OngsController extends Controller
      */
     public function store(Request $request)
     {
+
         $input = $request->all();
 
         $user_id = Auth::user()->id;
 
-        $input['user_id'] = $user_id;
+        $userids = DB::table('ongs')->pluck('user_id');
 
-        Ong::create($input);
-        
+        $criar = 0;
+
+        foreach($userids as $userid){
+            if($user_id == $userid){
+                return 'ja tem ong';
+                break;
+            }
+            else{
+                $criar = 1;
+            }
+        }
+
+        if($criar == 1){
+            $input['user_id'] = $user_id;
+
+            Ong::create($input);
+        }
+        else{
+            return 'ja tem ong';
+        }
+
     }
 
     /**
