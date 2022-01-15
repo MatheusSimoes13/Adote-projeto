@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ong;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OngsController extends Controller
 {
@@ -28,7 +30,7 @@ class OngsController extends Controller
      */
     public function create()
     {
-        //
+        return view('ongs.create');
     }
 
     /**
@@ -39,7 +41,14 @@ class OngsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        $user_id = Auth::user()->id;
+
+        $input['user_id'] = $user_id;
+
+        Ong::create($input);
+        
     }
 
     /**
@@ -89,7 +98,6 @@ class OngsController extends Controller
     {
         //
     }
-
 
     public function buscarOngId(Request $req){
 

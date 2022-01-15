@@ -12,6 +12,8 @@ class Ong extends Model
     use HasFactory;
 
     protected $primaryKey = 'ong_id';
+    protected $fillable = ['name','estado','cidade','user_id'];
+
 
     public function pets(){
 
@@ -24,5 +26,10 @@ class Ong extends Model
 
         return $this->hasOne('App\Models\Formulario');
 
+    }
+
+    public function user(){
+
+        return $this->belongsTo('App\Models\User');
     }
 }

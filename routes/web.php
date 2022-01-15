@@ -46,8 +46,6 @@ Route::get('/buscaOngNome', function(){
 Route::get('/ongs/buscarNome',[OngsController::class,'buscarOngNome'])->name('ongs.buscaNome');
 
 
-
-
 Route::group(['middleware'=>'web'],function(){
     Route::resource('/pets', PetsController::class);
 });
@@ -55,6 +53,11 @@ Route::group(['middleware'=>'web'],function(){
 Route::group(['middleware'=>'web'],function(){
     Route::resource('/ongs', OngsController::class);
 });
+
+Route::group(['middleware'=>'web'],function(){
+    Route::view('/criarOng', 'ongs.create');
+});
+
 
 Auth::routes();
 
