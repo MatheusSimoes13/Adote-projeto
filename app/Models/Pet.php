@@ -24,4 +24,9 @@ class Pet extends Model
         return $this->directory . $value;
     }
 
+    public function ong(){
+
+        return $this->belongsTo('App\Models\Ong');
+    }
+
 }

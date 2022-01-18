@@ -8,6 +8,7 @@
 
     @if (Auth::check())
         <a href="/criarOng">Criar Ong</a>
+        <a href="/minhaOng">Acessar minha Ong</a>
     @endif
 
     </div>

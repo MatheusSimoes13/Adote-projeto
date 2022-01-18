@@ -26,7 +26,8 @@ class CreatePetRequest extends FormRequest
         return [
             
             'name'=>'required',
-            'ong_id'=>'required'
+            'species'=>'required'
+
 
         ];
     }

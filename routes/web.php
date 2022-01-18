@@ -22,15 +22,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-
-
-Route::get('/listar', function (){
-    
-    $pets = Pet::all();
-
-    return $pets;
-});
-
 Route::get('/buscaOngId', function(){
 
     return view('searchOngId');
@@ -57,6 +48,13 @@ Route::group(['middleware'=>'web'],function(){
 Route::group(['middleware'=>'web'],function(){
     Route::view('/criarOng', 'ongs.create');
 });
+
+Route::group(['middleware'=>'web'],function(){
+    Route::get('/minhaOng', [OngsController::class,'show']);
+});
+
+Route::get('/criarPet',[PetsController::class,'create']);
+
 
 
 Auth::routes();

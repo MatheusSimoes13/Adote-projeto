@@ -78,12 +78,15 @@ class OngsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($ong_id)
+    public function show()
     {
 
-        $ong = Ong::find($ong_id);
+        $user = auth()->user();
+        $minhaOng = $user->ong;
+        $petsOng = $user->ong->pets;
 
-        return view('ongs.show',compact('ong'));
+            return view('ongs.show',compact(['minhaOng','petsOng']));
+
     }
 
     /**

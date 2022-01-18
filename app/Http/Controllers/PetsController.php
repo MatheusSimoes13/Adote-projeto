@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreatePetRequest;
 use App\Models\Pet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PetsController extends Controller
 {
@@ -50,17 +51,14 @@ class PetsController extends Controller
             $input['path'] = $name;
         }
 
+        $user = Auth::user();
+        $ong_id = $user->ong->ong_id;
 
-        // $this->validate($request,[
-
-        //     'name'=>'required',
-        //     'ong_id'=>'required'
-
-        // ]);
+        $input['ong_id'] = $ong_id;
 
         Pet::create($input);
 
-        return 'foi';
+        return redirect('/minhaOng');
 
     }
 
