@@ -53,7 +53,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/minhaOng', [OngsController::class,'show']);
 });
 
-Route::get('/mostrarOng', [OngsController::class,'show'])->name('mostrarOng');
+Route::get('/mostrarOng/{id}', [OngsController::class,'mostrarOng'])->name('mostrarOng');
 
 Route::get('/criarPet',[PetsController::class,'create'])->name('pets.create');
 

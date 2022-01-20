@@ -141,6 +141,11 @@ class OngsController extends Controller
         return view('ongs.showName',compact('ongs'));
     }
 
+    public function mostrarOng($id){
 
+        $ong = Ong::find($id);
+
+        return view('ongs.showOng',compact('ong'));
+    }
 
 }
