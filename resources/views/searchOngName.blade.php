@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="NomeOng">
+<div class="formProcura">
 
     {!! Form::open([
         'method' => 'get', 'route'=>'ongs.buscaNome'

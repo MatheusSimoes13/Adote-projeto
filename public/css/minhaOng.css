@@ -1,0 +1,50 @@
+h1{
+    text-align: center;
+}
+
+.minhaOng{
+    display: inline-block;
+    font-size: 30px;
+}
+
+.infoOng{
+    margin: auto;
+    width: 50%;
+}
+
+.infoOng ul{
+    margin: auto;
+    width: 71%;
+
+}
+
+.nomeOng{
+    width: 100%;
+    font-size: 80px;
+}
+
+.botaoCriarPet{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.ulPet{
+    list-style-type: none;
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 5%;
+    margin: 15px;
+    padding: 1em;
+}
+
+.liPet{
+    margin: 0px 15px;
+    font-size: 25px;
+}
+
+
+.divPets{
+    display: flex;
+    justify-content: center;
+}

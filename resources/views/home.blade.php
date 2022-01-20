@@ -2,15 +2,20 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <a href="/buscaOngId">Buscar Ong por Id</a>
-        <a href="/buscaOngNome">Buscar Ong por Nome</a>
-
+    <div>
+        <h1>Buscar Ong</h1>
+        <button type="button" class="btn btn-primary" onclick="window.location='{{route("busca.id")}}'" >Buscar Ong por ID</button>
+        <button type="button" class="btn btn-primary" onclick="window.location='{{route("busca.nome")}}'" >Buscar Ong por nome</button>
+        {{-- <a href="/buscaOngId">Buscar Ong por Id</a>
+        <a href="/buscaOngNome">Buscar Ong por Nome</a> --}}
+    </div>
+    <div class="areaOngHome">
     @if (Auth::check())
+        <h1>Área de Ongs</h1>   
         <a href="/criarOng">Criar Ong</a>
         <a href="/minhaOng">Acessar minha Ong</a>
     @endif
-
     </div>
+
 </div>
 @endsection

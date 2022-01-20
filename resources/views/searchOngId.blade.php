@@ -3,20 +3,20 @@
 @section('content')
 
 
-<div class="IdOng">
+    <div class="formProcura">
 
-    {!! Form::open([
-        'method' => 'get', 'route'=>'ongs.buscaId'
-    ]) !!}
-    
-        {!! Form::label('id', 'Id da Ong') !!}
-        {!! Form::number('id') !!}
-        {!! Form::submit('Procurar') !!}
-
-        {!! Form::token() !!}
-
+        {!! Form::open([
+            'method' => 'get', 'route'=>'ongs.buscaId'
+        ]) !!}
         
-    {!! Form::close() !!}
-</div>
+            {!! Form::label('id', 'Id da Ong') !!}
+            {!! Form::number('id') !!}
+            {!! Form::submit('Procurar') !!}
+
+            {!! Form::token() !!}
+
+            
+        {!! Form::close() !!}
+    </div>
 
 @endsection

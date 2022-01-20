@@ -26,14 +26,14 @@ Route::get('/buscaOngId', function(){
 
     return view('searchOngId');
 
-});
+})->name('busca.id');
 Route::get('/ongs/buscarId',[OngsController::class,'buscarOngId'])->name('ongs.buscaId');
 
 Route::get('/buscaOngNome', function(){
 
     return view('searchOngName');
 
-});
+})->name('busca.nome');
 Route::get('/ongs/buscarNome',[OngsController::class,'buscarOngNome'])->name('ongs.buscaNome');
 
 
@@ -53,7 +53,9 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/minhaOng', [OngsController::class,'show']);
 });
 
-Route::get('/criarPet',[PetsController::class,'create']);
+Route::get('/mostrarOng', [OngsController::class,'show'])->name('mostrarOng');
+
+Route::get('/criarPet',[PetsController::class,'create'])->name('pets.create');
 
 
 
