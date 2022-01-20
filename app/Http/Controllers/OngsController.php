@@ -143,9 +143,11 @@ class OngsController extends Controller
 
     public function mostrarOng($id){
 
-        $ong = Ong::find($id);
+        $ong = Ong::findOrFail($id);
 
-        return view('ongs.showOng',compact('ong'));
+        $pets = $ong->pets;
+
+        return view('ongs.showOng',compact(['ong','pets']));
     }
 
 }
