@@ -13,7 +13,10 @@
     @if (Auth::check())
         <h1>Área de Ongs</h1>   
         <a href="/criarOng">Criar Ong</a>
-        <a href="/minhaOng">Acessar minha Ong</a>
+        @if (Auth::user()->ong)
+            <a href="/minhaOng">Acessar minha Ong</a>
+        @endif
+
     @endif
     </div>
 

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+    <link rel="stylesheet" href="{{asset('css/minhaOng.css')}}">
+
 @section('content')
 
 
@@ -8,21 +10,24 @@
 <div class="infoOng">   
     <ul>
         <li  class="minhaOng">Id da ong: {{$ong->ong_id}}/</li>
-        <li  class="minhaOng">Estado: {{$ong->estado}}/</li>
-        <li  class="minhaOng">Cidade: {{$ong->cidade}}</li>
+        <li  class="minhaOng">{{$ong->cidade}}/{{$ong->estado}}</li>
+
     </ul>
 </div>
 
 <div class="divPets">
-@foreach ($pets as $pet)
-<ul class="ulPet">
-    <li class="liPet">{{$pet->name}}</li>
-    <li class="liPet">{{$pet->species}}</li>
-    <li class="liPet">{{$pet->age}}</li>
-    <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
-</ul>
-@endforeach
-</div>
 
-
+@if($pets!=null)
+    @foreach ($pets as $pet)
+    <ul class="ulPet">
+        <li class="liPet">{{$pet->name}}</li>
+        <li class="liPet">{{$pet->species}}</li>
+        <li class="liPet">{{$pet->age}}</li>
+        <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
+    </ul>
+    @endforeach
+    </div>
+@else
+<p>não tem pets</p>
+@endif
 @endsection

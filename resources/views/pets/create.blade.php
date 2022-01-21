@@ -13,6 +13,8 @@
     {!! Form::text('species') !!}
     {!! Form::label('age', 'Idade') !!}
     {!! Form::number('age') !!}
+    {!! Form::label('contact', 'Contato') !!}
+    {!! Form::text('contact') !!}
     {!! Form::file('fotopet') !!}
 
     {!! Form::submit('Enviar') !!}

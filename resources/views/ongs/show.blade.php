@@ -20,15 +20,20 @@
         <button type="button" class="btn btn-success" onclick="window.location='{{route("pets.create")}}'">Adicionar novo Pet</button>
     </div>
 
-    <div class="divPets">
-    @foreach ($petsOng as $pet)
-        <ul class="ulPet">
-            <li class="liPet">{{$pet->name}}</li>
-            <li class="liPet">{{$pet->species}}</li>
-            <li class="liPet">{{$pet->age}}</li>
-            <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
-        </ul>
-    @endforeach
-    </div>
+        <div class="divPets">
+            @foreach ($petsOng as $pet)
+            <ul class="ulPet">
+                <li class="liPet">{{$pet->name}}</li>
+                <li class="liPet">{{$pet->species}}</li>
+                <li class="liPet">{{$pet->age}}</li>
+                <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
+            </ul>
+            @endforeach
+        </div>
+
+
+
+
+
 
 @endsection

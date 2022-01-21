@@ -20,6 +20,7 @@ class CreatePetsTable extends Migration
             $table->string('species',20);
             $table->smallInteger('age');
             $table->timestamps();
+            $table->string('contact',20);
         });
     }
 
