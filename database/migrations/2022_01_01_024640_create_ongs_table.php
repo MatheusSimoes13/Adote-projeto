@@ -20,6 +20,7 @@ class CreateOngsTable extends Migration
             $table->enum('estado',['SP','RJ']);
             $table->string('cidade',70);
             $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->string('foto');
         });
     }
 

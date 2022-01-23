@@ -45,31 +45,40 @@ class OngsController extends Controller
 
         $input = $request->all();
 
+        if($file = $request->file('foto')){
+
+            $name = $file->getClientOriginalName();
+
+            $file->move('images',$name);
+
+            $input['foto'] = $name;
+        }
+
         $user_id = Auth::user()->id;
+
+        $input['user_id'] = $user_id;
 
         $userids = DB::table('ongs')->pluck('user_id');
 
-        $criar = 0;
-
-        foreach($userids as $userid){
-            if($user_id == $userid){
-                return 'ja tem ong';
-                break;
-            }
-            else{
-                $criar = 1;
-            }
-        }
-
-        if($criar == 1){
-            $input['user_id'] = $user_id;
+        if($userids=='[]'){
 
             Ong::create($input);
+            return redirect('/');
         }
         else{
-            return 'ja tem ong';
+            foreach($userids as $userid){
+                if($user_id == $userid){
+                    return 'ja tem ong';
+                    break;
+                }
+                else{
+                    Ong::create($input);
+                    return redirect('/');
+                }
+            }
         }
 
+        
     }
 
     /**

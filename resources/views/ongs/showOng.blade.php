@@ -24,6 +24,7 @@
         <li class="liPet">{{$pet->species}}</li>
         <li class="liPet">{{$pet->age}}</li>
         <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
+        <li class="liPet">{{$pet->contact}}</li>
     </ul>
     @endforeach
     </div>

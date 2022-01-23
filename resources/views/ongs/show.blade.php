@@ -9,8 +9,8 @@
         <div class="infoOng">   
             <ul>
                 <li  class="minhaOng">Id da ong: {{$minhaOng->ong_id}}/</li>
-                <li  class="minhaOng">Estado: {{$minhaOng->estado}}/</li>
-                <li  class="minhaOng">Cidade: {{$minhaOng->cidade}}</li>
+                <li  class="minhaOng">{{$minhaOng->cidade}}{{$minhaOng->estado}}</li>
+
             </ul>
         </div>
 
@@ -27,6 +27,7 @@
                 <li class="liPet">{{$pet->species}}</li>
                 <li class="liPet">{{$pet->age}}</li>
                 <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
+                <li class="liPet">{{$pet->contact}}</li>
             </ul>
             @endforeach
         </div>

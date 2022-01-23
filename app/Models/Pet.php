@@ -15,7 +15,7 @@ class Pet extends Model
         
     //     return $this->belongsTo('App\Ong', 'ong_id');
     // }
-    protected $fillable = ['name','ong_id','species','age','path'];
+    protected $fillable = ['name','ong_id','species','age','contact','path'];
 
     
 

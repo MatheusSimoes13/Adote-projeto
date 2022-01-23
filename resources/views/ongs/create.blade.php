@@ -11,6 +11,7 @@
     {!! Form::select('estado',['SP'=>'SP', 'RJ'=>'RJ'], null) !!}
     {!! Form::label('cidade', 'Cidade da ong') !!}
     {!! Form::text('cidade') !!}
+    {!! Form::file('foto') !!}
     {!! Form::submit('Criar') !!}
     
 

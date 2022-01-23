@@ -12,7 +12,7 @@ class Ong extends Model
     use HasFactory;
 
     protected $primaryKey = 'ong_id';
-    protected $fillable = ['name','estado','cidade','user_id'];
+    protected $fillable = ['name','estado','cidade','user_id','foto'];
 
 
     public function pets(){
