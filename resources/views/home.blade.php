@@ -11,10 +11,10 @@
     </div>
     <div class="areaOngHome">
     @if (Auth::check())
-        <h1>Área de Ongs</h1>   
-        <a href="/criarOng">Criar Ong</a>
+        <h1>Área de Ongs</h1>
+        <button type="button" class="btn btn-primary" onclick="window.location='{{route("criarong")}}'">Criar Ong</button>
         @if (Auth::user()->ong)
-            <a href="/minhaOng">Acessar minha Ong</a>
+            <button type="button" class="btn btn-primary" onclick="window.location='{{route("minhaong")}}'">Acessar minha ong</button>
         @endif
 
     @endif

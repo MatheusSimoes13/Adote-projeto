@@ -4,7 +4,7 @@
 @section('content')
 
     {!! Form::open([
-        'method'=>'post', 'route' => 'ongs.store'
+        'method'=>'post', 'route' => 'ongs.store', 'files'=>true
     ]) !!}
     {!! Form::label('name', 'Nome da Ong') !!}
     {!! Form::text('name') !!}

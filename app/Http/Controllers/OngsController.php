@@ -60,12 +60,6 @@ class OngsController extends Controller
 
         $userids = DB::table('ongs')->pluck('user_id');
 
-        if($userids=='[]'){
-
-            Ong::create($input);
-            return redirect('/');
-        }
-        else{
             foreach($userids as $userid){
                 if($user_id == $userid){
                     return 'ja tem ong';
@@ -76,9 +70,9 @@ class OngsController extends Controller
                     return redirect('/');
                 }
             }
-        }
 
-        
+
+            
     }
 
     /**
@@ -104,9 +98,10 @@ class OngsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Ong $ong)
     {
-        //
+
+      return view('ongs.edit',compact('ong'));
     }
 
     /**
@@ -116,9 +111,35 @@ class OngsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+
+
+        // Se não mandar foto quando editar essa variável vai manter a mesma foto que ja tinha
+        // $semFoto = $request['foto'];
+        // $input = $request;
+        
+        // if($request->hasFile('foto')){
+
+        //     $file = $input->file('foto');
+        //     $name = $file->getClientOriginalName();
+        //     $file->move('images',$name);
+
+        //     $input['foto'] = $name;
+            
+        // }
+
+        // else{
+        //     $input['foto'] = $semFoto;
+        // }
+
+            $this->validate($request,[
+                'foto' => 'nullable'
+            ]);
+
+        Auth::user()->ong->update($request->all());
+
+        return view('home');
     }
 
     /**

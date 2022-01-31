@@ -9,7 +9,7 @@
 
 <div class="infoOng">   
     <ul>
-        <li  class="minhaOng">Id da ong: {{$ong->ong_id}}/</li>
+        <li  class="minhaOng">Id da ong: {{$ong->ong_id}} - </li>
         <li  class="minhaOng">{{$ong->cidade}}/{{$ong->estado}}</li>
 
     </ul>

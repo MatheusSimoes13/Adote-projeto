@@ -10,14 +10,18 @@
             <ul>
                 <li  class="minhaOng">Id da ong: {{$minhaOng->ong_id}}/</li>
                 <li  class="minhaOng">{{$minhaOng->cidade}}{{$minhaOng->estado}}</li>
-
+                <img height="150" src="/images/{{$minhaOng->foto}}" alt="fotoOng">
             </ul>
         </div>
 
 
     {{-- <a href="/criarPet">Adicionar novo Pet</a> --}}
     <div class="botaoCriarPet">
-        <button type="button" class="btn btn-success" onclick="window.location='{{route("pets.create")}}'">Adicionar novo Pet</button>
+        
+        <button type="button" class="btn btn-success" onclick="window.location='{{route("pets.criar")}}'">Adicionar novo Pet</button>
+        {{-- <button type="button" class="btn btn-success" onclick="window.location='{{route("ongs.edit",$minhaOng)}}">Editar Ong</button> --}}
+        <button type="button" class="btn btn-success" onclick="window.location='{{route("ongs.edit", $minhaOng)}}'">Editar Ong</button>
+
     </div>
 
         <div class="divPets">

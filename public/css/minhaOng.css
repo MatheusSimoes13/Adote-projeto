@@ -15,7 +15,7 @@ h1{
 .infoOng ul{
     margin: auto;
     width: 71%;
-
+    
 }
 
 .nomeOng{
@@ -47,4 +47,8 @@ h1{
 .divPets{
     display: flex;
     justify-content: center;
+}
+
+.infoOng img{
+    
 }
