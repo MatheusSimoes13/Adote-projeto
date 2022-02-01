@@ -33,6 +33,13 @@
                 <li class="liPet">{{$pet->age}}</li>
                 <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
                 <li class="liPet">{{$pet->contact}}</li>
+                <li class="liPet">
+                    <form method="POST" action="{{route('pets.destroy',$pet)}}">
+                        @method('DELETE')
+                        {{ csrf_field() }}
+                        <input type="submit" class="btn btn-danger" value='X'>
+                    </form>
+                </li>
             </ul>
             @endforeach
         </div>

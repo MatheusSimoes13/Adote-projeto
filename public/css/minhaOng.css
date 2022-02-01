@@ -55,11 +55,14 @@ ul{
     border-radius: 5%;
     margin: 15px;
     padding: 1em;
+
 }
 
 .liPet{
     margin: 0px 15px;
     font-size: 25px;
+    display: flex;
+    justify-content: center;
 }
 
 

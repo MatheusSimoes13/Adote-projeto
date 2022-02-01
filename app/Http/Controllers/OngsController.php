@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ong;
+use App\Models\Pet;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -150,7 +151,7 @@ class OngsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 
     public function buscarOngId(Request $req){
