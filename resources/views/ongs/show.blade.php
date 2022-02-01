@@ -4,15 +4,16 @@
 
 @section('content')
 
-    <h1 class="nomeOng">{{$minhaOng->name}}</h1>
-
-        <div class="infoOng">   
-            <ul>
-                <li  class="minhaOng">Id da ong: {{$minhaOng->ong_id}}/</li>
-                <li  class="minhaOng">{{$minhaOng->cidade}}{{$minhaOng->estado}}</li>
-                <img height="150" src="/images/{{$minhaOng->foto}}" alt="fotoOng">
+    <div class="cardOng">
+        <h1 class="nomeOng">{{$minhaOng->name}}</h1>
+            <ul class="ulMinhaOng">
+                <li  class="minhaOng">Id da ong: {{$minhaOng->ong_id}}</li>
+                <li  class="minhaOng">{{$minhaOng->cidade}}/{{$minhaOng->estado}}</li>
             </ul>
-        </div>
+            <div id="fotoOng">
+                <img height="150" src="/images/{{$minhaOng->foto}}" alt="fotoOng">
+            </div>
+    </div>
 
 
     {{-- <a href="/criarPet">Adicionar novo Pet</a> --}}

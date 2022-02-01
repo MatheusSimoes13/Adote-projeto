@@ -2,10 +2,29 @@ h1{
     text-align: center;
 }
 
-.minhaOng{
-    display: inline-block;
-    font-size: 30px;
+ul{
+    list-style-type: none;
 }
+
+.cardOng{
+
+}
+
+.ulMinhaOng{
+    overflow: hidden;
+    text-align: center;
+}
+
+#fotoOng{
+    display: flex;
+    justify-content: center;
+}
+
+.minhaOng {
+
+    font-size: 35px;
+}
+
 
 .infoOng{
     margin: auto;
@@ -49,6 +68,6 @@ h1{
     justify-content: center;
 }
 
-.infoOng img{
-    
+.botaoCriarPet button{
+    margin-left: 1em;
 }
