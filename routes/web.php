@@ -29,13 +29,7 @@ Route::get('/buscaOngId', function(){
 })->name('busca.id');
 Route::get('/ongs/buscarId',[OngsController::class,'buscarOngId'])->name('ongs.buscaId');
 
-Route::get('/buscaOngNome', function(){
-
-    return view('searchOngName');
-
-})->name('busca.nome');
-Route::get('/ongs/buscarNome',[OngsController::class,'buscarOngNome'])->name('ongs.buscaNome');
-
+Route::get('/buscaOngNome', [OngsController::class,'buscarOngNome'])->name('busca.nome');
 
 Route::group(['middleware'=>'web'],function(){
     Route::resource('/pets', PetsController::class);

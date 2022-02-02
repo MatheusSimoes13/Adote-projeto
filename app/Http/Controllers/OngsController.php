@@ -163,13 +163,14 @@ class OngsController extends Controller
         return view('ongs.showId',compact('ong'));
     }
 
-    public function buscarOngNome(Request $req){
+    public function buscarOngNome(){
 
-        $ong_nome = $req->get('name');
-    
-        $ongs = Ong::where('name','LIKE','%'.$ong_nome.'%')->get();
-  
-        return view('ongs.showName',compact('ongs'));
+        $ongs = Ong::all();
+
+        // return $ongs;
+
+        return view('searchOngName',compact('ongs'));
+
     }
 
     public function mostrarOng($id){
