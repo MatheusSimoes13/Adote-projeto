@@ -22,12 +22,18 @@ function filtro(){
         const valorNome = input.value.toLowerCase().trim();
 
         for(i = 0; i < ongs.length; i++){
-            if(nomesOng[i].innerText != valorNome){
-                // console.log(nomesOng[i].parentNode);
-                nomesOng[i].parentNode.style.display = "none";
-            }else {
-                nomesOng[i].parentNode.style.display = "block";
+
+            if(valorNome == "" || valorNome == null){
+                nomesOng[i].parentNode.style.display = "inline-block";
             }
+            else if(nomesOng[i].innerText == valorNome){
+                nomesOng[i].parentNode.style.display = "inline-block";
+            }
+            else{
+                nomesOng[i].parentNode.style.display = "none";
+            }
+            
+            console.log(valorNome);
         }
 
     //     for(i = 0; i < nomesOng.length; i++){
