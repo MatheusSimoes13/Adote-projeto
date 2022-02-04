@@ -7,9 +7,18 @@
     font-size: 30px;
     border-radius: 15%;
     text-align: center;
+    width: 20%;
+    height: 45%;
 }
 
 img{
     margin: 1em 1em;
+}
 
+#input {
+    display: block;
+}
+
+.w3-row{
+    text-align: center;
 }

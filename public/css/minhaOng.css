@@ -42,7 +42,7 @@ ul{
     font-size: 80px;
 }
 
-.botaoCriarPet{
+.botoesFuncao{
     display: flex;
     justify-content: center;
     margin: 20px 0px;
@@ -71,6 +71,11 @@ ul{
     justify-content: center;
 }
 
-.botaoCriarPet button{
+.botoesFuncao button{
     margin-left: 1em;
+}
+
+.botoesFuncao form{
+    margin-left: 1em;
+    margin-block-end: 0%;
 }

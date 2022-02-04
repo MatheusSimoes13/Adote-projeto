@@ -23,10 +23,9 @@ Route::get('/', function () {
 });
 
 Route::get('/buscaOngId', function(){
-
     return view('searchOngId');
-
 })->name('busca.id');
+
 Route::get('/ongs/buscarId',[OngsController::class,'buscarOngId'])->name('ongs.buscaId');
 
 Route::get('/buscaOngNome', [OngsController::class,'buscarOngNome'])->name('busca.nome');

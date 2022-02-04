@@ -36,18 +36,7 @@ function filtro(){
             console.log(valorNome);
         }
 
-    //     for(i = 0; i < nomesOng.length; i++){
-    //         if(nomesOng[i].classList.contains(valorNome)){
-    //             nomesOng[i].style.display = "block";
-    //         }else if (valorNome == ""){
-    //             nomesOng[i].style.display = "block";
-    //         } else{
-    //             nomesOng[i].style.display = "none";
-    //         }
-    //     }
-
-     }
-    )
+    })
 
 }
 

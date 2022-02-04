@@ -15,14 +15,17 @@
             </div>
     </div>
 
-
-    {{-- <a href="/criarPet">Adicionar novo Pet</a> --}}
-    <div class="botaoCriarPet">
+    <div class="botoesFuncao">
         
         <button type="button" class="btn btn-success" onclick="window.location='{{route("pets.criar")}}'">Adicionar novo Pet</button>
-        {{-- <button type="button" class="btn btn-success" onclick="window.location='{{route("ongs.edit",$minhaOng)}}">Editar Ong</button> --}}
         <button type="button" class="btn btn-success" onclick="window.location='{{route("ongs.edit", $minhaOng)}}'">Editar Ong</button>
-
+        {{-- <button type="button" formmethod="delete" class="btn btn-danger" onclick="window.location='{{route("ongs.destroy", $minhaOng)}}'">Deletar Ong</button> --}}
+        <form action="{{route("ongs.destroy",$minhaOng)}}" method="POST">
+            @method('delete')
+            {{ csrf_field() }}
+            <input type="submit" class="btn btn-danger" value="Deletar Ong">
+        </form>
+        
     </div>
 
         <div class="divPets">
