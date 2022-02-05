@@ -16,19 +16,22 @@
 </div>
 
 
-<div class="divPets">
+
+
 
 @if($pets!=null)
+<div class="divPets">
     @foreach ($pets as $pet)
-    <ul class="ulPet">
-        <li class="liPet">{{$pet->name}}</li>
-        <li class="liPet">{{$pet->species}}</li>
-        <li class="liPet">{{$pet->age}}</li>
-        <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
-        <li class="liPet">{{$pet->contact}}</li>
-    </ul>
+        <ul class="ulPet">
+            <li class="liPet">{{$pet->name}}</li>
+            <li class="liPet">{{$pet->species}}</li>
+            <li class="liPet">{{$pet->age}}</li>
+            <li class="liPet"><img height="150"src="{{ asset($pet->path)}}" alt="animal"></li>
+            <li class="liPet">{{$pet->contact}}</li>
+        </ul>
     @endforeach
-    </div>
+</div>
+
 @else
 <p>não tem pets</p>
 @endif

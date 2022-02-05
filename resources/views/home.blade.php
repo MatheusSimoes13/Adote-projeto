@@ -12,9 +12,11 @@
     <div class="areaOngHome">
     @if (Auth::check())
         <h1>Área de Ongs</h1>
-        <button type="button" class="btn btn-primary" onclick="window.location='{{route("criarong")}}'">Criar Ong</button>
+        
         @if (Auth::user()->ong)
             <button type="button" class="btn btn-primary" onclick="window.location='{{route("minhaong")}}'">Acessar minha ong</button>
+        @else
+            <button type="button" class="btn btn-primary" onclick="window.location='{{route("criarong")}}'">Criar Ong</button>
         @endif
 
     @endif
