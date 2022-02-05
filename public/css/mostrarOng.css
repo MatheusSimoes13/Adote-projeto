@@ -22,3 +22,11 @@ img{
 .w3-row{
     text-align: center;
 }
+
+.text{
+    display: block;
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
