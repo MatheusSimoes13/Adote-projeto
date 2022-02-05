@@ -165,6 +165,7 @@ class OngsController extends Controller
         $ong = Ong::findOrFail($ong_id);
 
         return view('ongs.showId',compact('ong'));
+        // return view('ongs.showOng',compact(['ong','pets']));
     }
 
     public function buscarOngNome(){
