@@ -79,3 +79,28 @@ ul{
     margin-left: 1em;
     margin-block-end: 0%;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .nomeOng{
+        font-size: 40px;
+    }
+
+    .minhaOng{
+        font-size: 30px;
+    }
+
+    .ulMinhaOng{
+        padding: 0px;
+    }
+
+    .ulPet{
+        display: inline-block;
+    }
+
+    .divPets{
+        display: block;
+        text-align: center;
+    }
+
+}
