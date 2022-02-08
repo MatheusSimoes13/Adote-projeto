@@ -47,7 +47,7 @@
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ 'As senhas não estão iguais' }}</strong>
                                     </span>
                                 @enderror
                             </div>
