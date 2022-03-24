@@ -23,7 +23,7 @@
         <form action="{{route("ongs.destroy",$minhaOng)}}" method="POST">
             @method('delete')
             {{ csrf_field() }}
-            <input type="submit" class="btn btn-danger" value="Deletar Ong">
+            <input type="submit" class="btn btn-danger" value="Deletar Ong" onclick="return confirm('Deletar?')">
         </form>
         
     </div>
@@ -40,7 +40,7 @@
                     <form method="POST" action="{{route('pets.destroy',$pet)}}">
                         @method('DELETE')
                         {{ csrf_field() }}
-                        <input type="submit" class="btn btn-danger" value='X'>
+                        <input type="submit" class="btn btn-danger" value='X' onclick="return confirm('Deletar?')">
                     </form>
                 </li>
             </ul>
